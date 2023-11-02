@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 15:12:11 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/02 18:01:28 by sessarhi         ###   ########.fr       */
+/*   Created: 2023/11/02 18:02:51 by sessarhi          #+#    #+#             */
+/*   Updated: 2023/11/02 18:38:02 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void  *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void  *ft_memchr(const void *s, int c, size_t n)
 {
-  size_t i;
-  unsigned char *str;
-  const unsigned char *src1;
-
-  i = 0;
-  str =(unsigned char *)(dst); 
- src1  = ( const unsigned char *)(src);
-  
-  if (dst == src)
-    return (dst);
-  while (i < n)
-  {
-    str[i] = src1[i]; 
-    i++; 
-  }
-  return (dst);
+    size_t i;
+    const unsigned char *str;
+    unsigned char b;
+    
+    i = 0;
+    str = s;
+    b = c;
+    while (i < n)
+    {
+        if (str[i] == b)
+            return ((void *)(s + i));
+        i++;
+    }
+    return (NULL);
+}
+int main ()
+{
+    int c = 3;
+    size_t n = 5;
+   int s[] = {1,2,3,4};
+    printf("%s\n",ft_memchr(s,c,n));
+    printf("%s\n",memchr(s,c,n));
 }
