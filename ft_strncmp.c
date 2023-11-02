@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 22:26:33 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/10/31 22:45:14 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/02 13:12:18 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,4 @@
             i++;
         return (s1[i]-s2[i]);
    }
-   int main()
-   {
-        char *s1 = NULL;
-        char *s2 = "";
-        size_t n = 5;
-        printf("%d\n",ft_strncmp(s1,s2,n));
-        printf("%d\n",strncmp(s1,s2,n));
-   }
+ 
