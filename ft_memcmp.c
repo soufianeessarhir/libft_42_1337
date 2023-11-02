@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 22:25:45 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/02 22:50:26 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/02 22:55:38 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,4 @@ int main ()
     printf("%d\n",ft_memcmp(s1,s2,8));
      printf("%d\n",memcmp(s1,s2,8));
 }
+
