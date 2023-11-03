@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 22:25:45 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/02 23:08:51 by sessarhi         ###   ########.fr       */
+/*   Created: 2023/11/03 11:48:57 by sessarhi          #+#    #+#             */
+/*   Updated: 2023/11/03 15:27:17 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+char    *ft_strjoin(char const *s1, char const *s2)
 {
-    size_t i ;
-    const unsigned char *str1;
-    const unsigned char *str2;
-
-    i = 0;
-    str1 = (const unsigned char *)(s1);
-    str2 = (const unsigned char *)(s2);
+    int i;
+    char *newstr;
     
-    while (str1[i] == str2[i] &&  i < n-1 )
+    i = 0;
+    newstr = malloc(sizeof(char)*(ft_strlen(s1) + ft_strlen(s2) + 1));
+    
+    if(!newstr)
+        return (NULL);
+    
+    while (*s1)
+    {
+        newstr[i] = *s1++; 
         i++;
-    return (str1[i] - str2[i]);  
+    }
+    while (*s2)
+    {
+        newstr[i] = *s2++;
+        i++;
+    }
+    *(newstr + i) = '\0';
+    return (newstr);
 }
 // int main ()
 // {
-//     char s1[] = {1,2,3,4};
-//     int s2[] = {1,2,3,4};
-//     printf("%d\n",ft_memcmp(s1,s2,8));
-//      printf("%d\n",memcmp(s1,s2,8));
+//     char * s1= NULL;
+//     char * s2= "hellow";
+//     printf("%s\n", ft_strjoin(s1,s2));
 // }
-

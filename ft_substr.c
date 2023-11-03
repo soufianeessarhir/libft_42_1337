@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 22:25:45 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/02 23:08:51 by sessarhi         ###   ########.fr       */
+/*   Created: 2023/11/03 09:44:02 by sessarhi          #+#    #+#             */
+/*   Updated: 2023/11/03 10:27:13 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+char    *ft_substr(char const *s, unsigned int start,size_t len)
 {
-    size_t i ;
-    const unsigned char *str1;
-    const unsigned char *str2;
+    char    *str;
+    size_t i;
 
     i = 0;
-    str1 = (const unsigned char *)(s1);
-    str2 = (const unsigned char *)(s2);
+    str = malloc(len + 1);
     
-    while (str1[i] == str2[i] &&  i < n-1 )
-        i++;
-    return (str1[i] - str2[i]);  
+    if(!str)
+        return (NULL);
+    while (i < len)
+    {
+       str[i] = *(s + i + start);
+       i++;
+    }
+    str[i] = '\0';
+    return (str);
 }
 // int main ()
 // {
-//     char s1[] = {1,2,3,4};
-//     int s2[] = {1,2,3,4};
-//     printf("%d\n",ft_memcmp(s1,s2,8));
-//      printf("%d\n",memcmp(s1,s2,8));
+//     printf("%s\n",ft_substr("hellow world",12,5));
 // }
-

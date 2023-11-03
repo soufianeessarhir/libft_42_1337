@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:52:00 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/02 15:55:56 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/02 23:26:14 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void   ft_bzero(void *s, size_t n)
         i++;
     }
 }
-int main()
-{
-    char s[] = "hello world welcome in c";
-    size_t n = 5;
-    bzero(s,n);
-    for(int i = 0; i < 10; i++)
-    {
-        printf("%d\n", s[i] );
-    }
-}
+// int main()
+// {
+//     char s[] = "hello world welcome in c";
+//     size_t n = 5;
+//     bzero(s,n);
+//     for(int i = 0; i < 10; i++)
+//     {
+//         printf("%d\n", s[i] );
+//     }
+// }

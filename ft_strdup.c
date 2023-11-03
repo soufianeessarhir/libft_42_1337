@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 23:37:40 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/03 12:49:42 by sessarhi         ###   ########.fr       */
+/*   Created: 2023/11/02 23:37:11 by sessarhi          #+#    #+#             */
+/*   Updated: 2023/11/02 23:40:22 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void   *ft_memset(void *b, int c, size_t len)
+
+char *ft_strdup(const char *str)
 {
-    size_t i;
-    unsigned char *str;
-    
+    int i;
     i = 0;
-    str = (unsigned char *)(b);
+    char *ptr;
+    ptr = malloc(sizeof(char ) * (ft_strlen(str)));
+    if(!ptr)
+        return (NULL);
     
-    while (i < len)
+    while(str[i])
     {
-        str[i] = (unsigned char )(c);
-        i++; 
+        ptr[i] = str[i];
+        i++;
     }
-     return (b);  
-}
-int main ()
-{
-    int i = 0;
-    //101 00111001
-    // 000000001 00000001 00000001 00000001 
-    // ft_memset(&i,136,1);
-    ft_memset(&i + 1, 19, 1);
-    printf("%d\n",i + 1);
+    ptr[i] = '\0';
+    return (ptr);
 }

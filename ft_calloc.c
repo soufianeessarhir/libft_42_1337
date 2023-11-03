@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 23:37:40 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/03 12:49:42 by sessarhi         ###   ########.fr       */
+/*   Created: 2023/11/02 23:12:29 by sessarhi          #+#    #+#             */
+/*   Updated: 2023/11/02 23:36:35 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void   *ft_memset(void *b, int c, size_t len)
+void   *ft_calloc(size_t count, size_t size)
 {
-    size_t i;
-    unsigned char *str;
-    
-    i = 0;
-    str = (unsigned char *)(b);
-    
-    while (i < len)
-    {
-        str[i] = (unsigned char )(c);
-        i++; 
-    }
-     return (b);  
+    void *ptr;
+    ptr = malloc (count * size);
+    if(!ptr)
+        return NULL;
+    ft_bzero(ptr, count * size);
+    return (ptr);
 }
 int main ()
 {
-    int i = 0;
-    //101 00111001
-    // 000000001 00000001 00000001 00000001 
-    // ft_memset(&i,136,1);
-    ft_memset(&i + 1, 19, 1);
-    printf("%d\n",i + 1);
+    char *ptr = ft_calloc(5,1);
+    for (int i = 0;i < 30; i++)
+    {
+        printf("%d\n",ptr[i]);
+    }
 }
