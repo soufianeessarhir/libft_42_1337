@@ -6,13 +6,13 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:07:35 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/01 21:12:28 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/03 20:27:04 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t   ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t   ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
    size_t i;
    size_t dlen;
@@ -23,14 +23,21 @@ size_t   ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsi
    i = 0;
    
    if (dlen >= dstsize )
-      return  (dlen + dstsize);
-   if(dstsize == 0)
-      return (slen);
-   while (dlen + i  < dstsize - 1  && src[i])
+      return  (slen + dstsize);
+   while (dlen + i < dstsize - 1  && src[i])
    {
       dst[dlen + i] = src[i];
       i++;
    }
    dst[dlen + i] = '\0';
    return (dlen + slen); 
+}
+int main ()
+{
+   char dst[] = "hellow"; 
+   char dst1[] = "hellow"; 
+   char src[] = "world"; 
+   char src1[] = "world"; 
+    printf("%zu  %s\n",ft_strlcat(dst,src,-1),dst);
+    printf("%zu  %s\n",strlcat(dst1,src1,-1),dst1);
 }

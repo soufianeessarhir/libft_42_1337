@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 22:00:35 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/03 23:26:34 by sessarhi         ###   ########.fr       */
+/*   Created: 2023/11/03 22:38:11 by sessarhi          #+#    #+#             */
+/*   Updated: 2023/11/03 23:29:29 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strrchr(const char *s, int c)
+char **ft_split(char const *s, char c)
 {
-    int len;
+    char    **str;
+    int i;
+    int j;
+    int k;
     
-    len = ft_strlen(s) ;
-    while (len + 1 )
+    i = 0;
+    j = 0;
+    k = 0;
+    
+    while(s[k])
     {
-        if (s[len] == c)
-            return ((char *)(s + len));
-        len--;
+        while (s[k] != c && s[k])
+            k++
+        if()
+       
+        
     }
-    return NULL;
-}
-// int main()
-// {
-//     char s[] = "hellow world welcome in c";
-//     printf("%s \n",ft_strrchr(s, 'q'));
-//     //  printf("%s \n",strrchr(s, 'h'));
     
-// }
-
+}
