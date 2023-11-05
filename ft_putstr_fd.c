@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 06:52:10 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/05 14:30:35 by sessarhi         ###   ########.fr       */
+/*   Created: 2023/11/05 15:13:11 by sessarhi          #+#    #+#             */
+/*   Updated: 2023/11/05 15:28:25 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_striteri(char *s, void (*f)(unsigned int,char*))
+void    ft_putstr_fd(char *s, int fd)
 {
     int i;
-    
+
     i = 0;
-    while(s[i])
+    while (s[i])
     {
-        f(i,&s[i]);
-        i++;
+       write(fd,&s[i],1);
+       i++;
     }
+    
 }
-// void uppercase(unsigned int index, char *ch)
-// {
-//     *ch = ft_toupper(*ch);
-// }
 // int main()
 // {
-// 	char str[] = "hello";
-//     ft_striteri(str, uppercase);
-// 	printf("%s\n", str);
+//    int fd = open("ft_strlen.c",O_RDWR);
+//     ft_putstr_fd("hello",3);
 // }
-
-
-

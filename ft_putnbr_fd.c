@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 06:52:10 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/05 14:30:35 by sessarhi         ###   ########.fr       */
+/*   Created: 2023/11/05 15:35:22 by sessarhi          #+#    #+#             */
+/*   Updated: 2023/11/05 15:53:03 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void    ft_striteri(char *s, void (*f)(unsigned int,char*))
+#include <fcntl.h>
+void ft_putnbr_fd(int n, int fd)
 {
-    int i;
-    
-    i = 0;
-    while(s[i])
+    long    nb;
+    nb = n;
+    if (nb < 0)
     {
-        f(i,&s[i]);
-        i++;
+        nb = -nb;
+        ft_putchar_fd('-',fd);
+    }
+    if (nb <= 9)
+    {
+        ft_putchar_fd(nb + '0',fd);
+    }
+    else
+    {
+        ft_putnbr_fd(nb / 10, fd);
+        ft_putnbr_fd(nb % 10, fd);
     }
 }
-// void uppercase(unsigned int index, char *ch)
-// {
-//     *ch = ft_toupper(*ch);
-// }
-// int main()
-// {
-// 	char str[] = "hello";
-//     ft_striteri(str, uppercase);
-// 	printf("%s\n", str);
-// }
-
-
-
+int main()
+{
+    
+    int fd = open("test",O_RDWR);
+    ft_putnbr_fd(2147483647,fd);
+}
