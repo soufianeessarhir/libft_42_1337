@@ -1,32 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 23:37:11 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/04 23:46:15 by sessarhi         ###   ########.fr       */
+/*   Created: 2023/11/05 05:41:15 by sessarhi          #+#    #+#             */
+/*   Updated: 2023/11/05 07:04:38 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 
-char *ft_strdup(const char *str)
+char    *ft_strmapi(char const *s, char (*f)(unsigned  int, char))
 {
+    size_t  len;
+    char *str;
     int i;
-    char *ptr;
 
     i = 0;
-    ptr = malloc(sizeof(char ) * (ft_strlen(str) + 1));
-    if(!ptr)
+    if(!s || !f)
         return (NULL);
-    while(str[i])
+        
+    len = ft_strlen(s);
+    str = malloc(sizeof(char) * (len + 1));
+    while (s[i])
     {
-        ptr[i] = str[i];
+        str[i] = f(i,s[i]);
         i++;
     }
-    ptr[i] = '\0';
-    return (ptr);
+    
+    str[i] = '\0';
+    return (str);
+    
 }
+
+// char f(unsigned int i, char c)
+// {
+// 	return(c - 32);
+// }
+
+// int main()
+// {
+// 	char str1[] = "abc";
+// 	char* str2;
+// 	str2 = ft_strmapi(str1, *f);
+// 	printf("%s\n", str2);
+// }

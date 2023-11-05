@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:12:29 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/02 23:36:35 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/05 00:29:59 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void   *ft_calloc(size_t count, size_t size)
     ft_bzero(ptr, count * size);
     return (ptr);
 }
-int main ()
-{
-    char *ptr = ft_calloc(5,1);
-    for (int i = 0;i < 30; i++)
-    {
-        printf("%d\n",ptr[i]);
-    }
-}
+// int main ()
+// {
+//     char *ptr = ft_calloc(5,1);
+//     for (int i = 0;i < 30; i++)
+//     {
+//         printf("%d\n",ptr[i]);
+//     }
+// }

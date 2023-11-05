@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 23:37:11 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/04 23:46:15 by sessarhi         ###   ########.fr       */
+/*   Created: 2023/11/05 06:52:10 by sessarhi          #+#    #+#             */
+/*   Updated: 2023/11/05 07:23:12 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-char *ft_strdup(const char *str)
+void    ft_striteri(char *s, void (*f)(unsigned int,char*))
 {
     int i;
-    char *ptr;
-
+    
     i = 0;
-    ptr = malloc(sizeof(char ) * (ft_strlen(str) + 1));
-    if(!ptr)
-        return (NULL);
-    while(str[i])
+    while(s[i])
     {
-        ptr[i] = str[i];
+        f(i,&s[i]);
         i++;
     }
-    ptr[i] = '\0';
-    return (ptr);
 }
+// void uppercase(unsigned int index, char *ch)
+// {
+//     *ch = ft_toupper(*ch);
+// }
+// int main()
+// {
+// 	char str[] = "hello";
+//     ft_striteri(str, uppercase);
+// 	printf("%s\n", str);
+// }

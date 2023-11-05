@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:07:35 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/03 20:27:04 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/05 03:20:03 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ size_t   ft_strlcat(char *dst, const char *src, size_t dstsize)
    dst[dlen + i] = '\0';
    return (dlen + slen); 
 }
-int main ()
-{
-   char dst[] = "hellow"; 
-   char dst1[] = "hellow"; 
-   char src[] = "world"; 
-   char src1[] = "world"; 
-    printf("%zu  %s\n",ft_strlcat(dst,src,-1),dst);
-    printf("%zu  %s\n",strlcat(dst1,src1,-1),dst1);
-}
+// int main ()
+// {
+//    char dst[] = "hellow"; 
+//    char dst1[] = "hellow"; 
+//    char src[] = "world"; 
+//    char src1[] = "world"; 
+//     printf("%zu  \n",ft_strlcat(dst,src,-1));
+//     printf("%zu  \n",strlcat(dst1,src1,-1));
+// }

@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:37:40 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/03 22:03:37 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/04 20:33:01 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void   *ft_memset(void *b, int c, size_t len)
     }
      return (b);  
 }
-int main ()
-{
-   char i[] ="hellow";
-    //101 00111001
-    // 000000001 00000001 00000001 00000001 
-    // ft_memset(&i,136,1);
-    ft_memset(i, '0', 16);
-    printf("%s\n",i);
-}
+// int main ()
+// {
+//    char i[] ="hellow";
+//     //101 00111001
+//     // 000000001 00000001 00000001 00000001 
+//     // ft_memset(&i,136,1);
+//     ft_memset(i, '0', 16);
+//     printf("%s\n",i);
+// }

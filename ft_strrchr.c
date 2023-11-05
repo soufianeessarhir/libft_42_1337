@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 22:00:35 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/03 23:26:34 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/04 10:06:14 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char    *ft_strrchr(const char *s, int c)
     len = ft_strlen(s) ;
     while (len + 1 )
     {
-        if (s[len] == c)
+        if (s[len] == (char)c)
             return ((char *)(s + len));
         len--;
     }

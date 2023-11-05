@@ -6,12 +6,12 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:02:51 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/02 18:38:02 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/05 03:20:28 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <limits.h>
 void  *ft_memchr(const void *s, int c, size_t n)
 {
     size_t i;
@@ -29,11 +29,14 @@ void  *ft_memchr(const void *s, int c, size_t n)
     }
     return (NULL);
 }
-int main ()
-{
-    int c = 3;
-    size_t n = 5;
-   int s[] = {1,2,3,4};
-    printf("%s\n",ft_memchr(s,c,n));
-    printf("%s\n",memchr(s,c,n));
-}
+// int main ()
+// {
+//     char *p = memchr("hamid",97,SIZE_T_MAX +1);
+
+//     while(*p)
+//     {
+//         printf("%c",*p++);
+//     }
+    
+//     // printf("%d\n",);
+// }

@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:28:19 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/03 17:49:53 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/05 03:21:36 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ char* ft_strtrim(char const* s1, char const* set)
     size_t end;
     char *str;
 
+   
+        if(!s1 || !set)
+            return (NULL);
     front = 0;
     end = ft_strlen(s1);
-    
-    while (s1[front]&& ft_strchr(set, s1[front]))
+    while (s1[front] && ft_strchr(set, s1[front]))
         front++;
     while (s1[end - 1] &&  ft_strchr(set,s1[end - 1]) && end - 1 > front)
         end--;
@@ -33,7 +35,13 @@ char* ft_strtrim(char const* s1, char const* set)
 }
 // int main()
 // {
-// 	printf("%s\n", ft_strtrim(NULL, "abc"));
-// 	printf("%s\n", ft_strtrim(NULL, "xyz"));
+// //     if(strcmp("" ,ft_strtrim("", "") ) == 0)
+// //     {
+// //         printf("i'm empty");
+// //     }
+// //     else
+// //         printf("dhdgdgdd\n");
+// 	printf("|%s|\n",ft_strtrim("fdhsf", "hs"));
+// 	// printf("%s\n", ft_strtrim(NULL, "xyz"));
 // 	return 0;
 // }
