@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 15:31:46 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/05 15:34:28 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/08 02:53:07 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void    ft_putendl_fd(char *s, int fd)
 {
-        int i;
+    int i;
 
     i = 0;
+    if(!s)
+        return;
     while (s[i])
     {
        write(fd,&s[i],1);

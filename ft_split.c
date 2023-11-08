@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:38:11 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/05 06:25:10 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/08 05:00:00 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int ft_strfill(const char *s , char **str, char c)
             start = s;
             while (*s != '\0' && *s != c)
                 s++;
-            *str = ft_substr(start ,0,s - start);
+            *str = ft_substr(start,0,s-start);
             if(!*str)
             {
                 my_free(str);
@@ -71,13 +71,17 @@ char    **ft_split(char const *s, char c)
     char    **str;
     size_t  size;
     if(s == NULL)
-       return(NULL);
+        return(NULL);
     size = ft_count(s,c) + 1;
     str = malloc(sizeof(char *) * size);
     if (!str)
+    {
+        my_free(str);
         return (NULL);
-    if(ft_strfill(s,str,c))
+    }
+    if(ft_strfill(s,str,c) == 1)
         return (NULL);
+    
     return (str);
 }
 
@@ -87,9 +91,9 @@ char    **ft_split(char const *s, char c)
 
    
 //     char **str ;
-//     const char *s = NULL;
+//     const char *s = "      split       this for   me  !       ";
 //     // char c = '#';
-//     str = ft_split(s,-1);
+//     str = ft_split(s,' ');
     
 //     while (*str)
 //     {

@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 09:44:02 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/05 03:10:45 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/08 02:59:48 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char    *ft_substr(char const *s, unsigned int start,size_t len)
     if (!s)
         return (NULL); 
     s_len = ft_strlen(s);
-    i = 0;
     if(len == 0 || start > s_len)
         return(ft_strdup(""));
     if(len > ft_strlen(s + start))
@@ -30,6 +29,7 @@ char    *ft_substr(char const *s, unsigned int start,size_t len)
 
     if(!str)
         return (NULL);
+    i = 0;
     while (i < len)
     {
        str[i] = *(s + i + start);

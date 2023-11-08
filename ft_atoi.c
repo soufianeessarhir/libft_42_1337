@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:43:03 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/04 20:37:14 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/07 19:07:32 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,20 @@ int ft_atoi(const char *str)
 {
     long long int   nb;
     int s ;
-    
+   
     nb = 0;
     s = 1;
     while ((*str >= 9 && *str <= 13) || *str == 32)
         str++;
-    if (*str == '-')
+    if (*str == '-' || *str == '+')
     {
-        s = -1;
+        if (*str == '-')
+            s = -1;
         str++;
     } 
-    else if (*str == '+')
-        str++;
     while (*str && (*str >= '0' && *str <= '9')) 
     {
-        if (nb > 922337203685477580 || (nb ==  922337203685477580 && *str - '0' > 7 ))
+        if (nb  > 922337203685477580 || (nb ==  922337203685477580 && *str - '0' > 7 ))
         {
             if (s == 1)
                 return (-1); 
@@ -47,6 +46,6 @@ int ft_atoi(const char *str)
 // {
 
 
-//     printf("%d\n", ft_atoi(str));
-//     printf("%d\n", atoi(str));
+//     printf("%d\n", ft_atoi("922337203680547758"));
+//     printf("%d\n", atoi(" 922337203685477580"));
 // }

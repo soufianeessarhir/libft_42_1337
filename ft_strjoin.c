@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 11:48:57 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/03 15:27:17 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/08 02:40:12 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char    *ft_strjoin(char const *s1, char const *s2)
     char *newstr;
     
     i = 0;
+    if(!s1 || !s2)
+        return NULL;
     newstr = malloc(sizeof(char)*(ft_strlen(s1) + ft_strlen(s2) + 1));
     
     if(!newstr)
