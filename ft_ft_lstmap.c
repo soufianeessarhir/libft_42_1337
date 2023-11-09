@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_ft_lstmap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 02:26:24 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/08 16:09:35 by sessarhi         ###   ########.fr       */
+/*   Created: 2023/11/08 06:17:07 by sessarhi          #+#    #+#             */
+/*   Updated: 2023/11/09 03:30:36 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (lst && new)
+	t_list	*frst;
+	t_list	*s;
+
+	if (!lst || !f || !del)
+		return (NULL);
+	frst = lst;
+	while (lst)
 	{
-		new->next = *lst;
-		*lst = new;
+		s = ft_lstnew(lst->content);
+		if (!s)
+		{
+			ft_lstdelone(s,del);
+			return (NULL);
+		}
+		lst = lst->next;
 	}
+	frst = s;
+	return (s);
 }
-// int main()
-// {
-
-//     t_list *new = ft_lstnew("0");
-//     t_list *lst = ft_lstnew("1");
-//     lst->next =ft_lstnew("2");
-//     lst->next->next = ft_lstnew("3");
-
-//     ft_lstadd_front(&lst,new);
-
-//     while(lst)
-//     {
-//         printf("%s\n", lst->content);
-//       lst = lst->next;
-//     }
-
-// }
