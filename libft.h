@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 20:12:01 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/09 02:27:20 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/09 18:36:26 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 // # include <string.h>
 // # include <fcntl.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -60,13 +65,4 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}				t_list;
-
-
-
 #endif
