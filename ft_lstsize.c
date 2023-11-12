@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 20:28:29 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/08 16:00:43 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/12 02:05:30 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	i;
 
 	i = 0;
-	if (lst)
+	if (!lst)
 		return (0);
 	while (lst)
 	{
@@ -26,3 +26,4 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
+

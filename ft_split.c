@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:38:11 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/08 23:20:57 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/12 06:09:50 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static size_t	ft_count(const char *s, char c)
 			s++;
 		if (*s != '\0')
 			count++;
-		while (*s != c && *s != '\0' )
+		while (*s != c && *s)
 			s++;
 	}
 	return (count);
@@ -46,23 +46,23 @@ static int	ft_strfill(const char *s, char	**str, char c)
 {
 	const char	*start;
 
-	while (s && *s)
+	while (*s)
 	{
 		while (*s == c)
 			s++;
+		start = s;
 		if (*s != '\0')
 		{
-			start = s;
 			while (*s != '\0' && *s != c)
 				s++;
 			*str = ft_substr(start, 0, s - start);
-			if (!*str)
+			if (*str == NULL)
 			{
 				my_free(str);
 				return (1);
 			}
-			str++;
 		}
+		str++;
 	}
 	*str = NULL;
 	return (0);
@@ -78,12 +78,12 @@ char	**ft_split(char const *s, char c)
 	size = ft_count(s, c) + 1;
 	str = malloc(sizeof(char *) * size);
 	if (!str)
+		return (NULL);
+	if (ft_strfill(s, str, c) == 1)
 	{
 		my_free(str);
 		return (NULL);
 	}
-	if (ft_strfill(s, str, c) == 1)
-		return (NULL);
 	return (str);
 }
 
@@ -91,8 +91,8 @@ char	**ft_split(char const *s, char c)
 // {
 
 //     char **str ;
-//     char *s = "		split       this for   me  !       ";
-//     str = ft_split(s,' ');
+//     char *s = "		split		this		for		me		!						";
+//     str = ft_split(s,'	');
 // 	if(!str)
 // 	{
 // 		printf("test success");

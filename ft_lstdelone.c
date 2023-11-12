@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 21:57:26 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/11 04:34:36 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/12 05:16:01 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
+	if (!lst || !del)
+		return ;
 	if (!lst)
 		return ;
 	del(lst->content);
