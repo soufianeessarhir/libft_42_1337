@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 22:00:35 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/08 19:50:51 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/13 06:12:22 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-// int main()
-// {
-//     char s[] = "hellow world welcome in c";
-//     printf("%s \n",ft_strrchr(s, 'q'));
-//     //  printf("%s \n",strrchr(s, 'h'));
-
-// }

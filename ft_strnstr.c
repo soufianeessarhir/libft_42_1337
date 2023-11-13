@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 21:43:37 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/08 19:49:14 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/13 06:12:30 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-// int main()
-// {
-//     char *haystack = "hello world";
-//     char *haystack1 = "hello world";
-//     char *needle = "";
-//     printf("%s\n",ft_strnstr(haystack,needle,8));
-//     printf("%s\n",strnstr(haystack1,needle,8));
-
-// }

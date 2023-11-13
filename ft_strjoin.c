@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 11:48:57 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/08 19:33:34 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/13 06:13:05 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	*(newstr + i) = '\0';
 	return (newstr);
 }
-// int main ()
-// {
-//     char * s1= NULL;
-//     char * s2= "hellow";
-//     printf("%s\n", ft_strjoin(s1,s2));
-// }

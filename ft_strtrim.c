@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:28:19 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/08 20:06:51 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/13 06:12:10 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(str, &s1[front], end - front + 1);
 	return (str);
 }
-// int main()
-// {
-// //     if(strcmp("" ,ft_strtrim("", "") ) == 0)
-// //     {
-// //         printf("i'm empty");
-// //     }
-// //     else
-// //         printf("dhdgdgdd\n");
-// 	printf("|%s|\n",ft_strtrim("fdhsf", "hs"));
-// 	// printf("%s\n", ft_strtrim(NULL, "xyz"));
-// 	return 0;
-// }

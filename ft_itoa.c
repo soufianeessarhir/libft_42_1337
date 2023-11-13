@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 22:28:09 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/08 15:00:03 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/13 06:17:07 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-// int main ()
-// {
-//     int n = 0;
-//     char *str = ft_itoa(n);
-//     printf("|%s|\n",str);
-// }

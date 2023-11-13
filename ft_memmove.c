@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 19:34:17 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/08 16:13:30 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/13 06:13:44 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,30 +28,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-// int main ()
-// {
-//     int dst[] = {1,2,3,4,5};
-//     int dst1[] = {1,2,3,4,5};
-//     int dst2[] = {1,2,3,4,5};
-//     memcpy(dst + 2, dst, 8);
-
-//     for (int i=0; i < 4;i++)
-//     { 
-//         printf("%d\n",dst[i]);
-//     }
-//     printf("-------------------\n");
-//     
-//     for (int i=0; i < 4;i++)
-//     { 
-//      printf("%d\n",dst1[i]);
-//     }
-
-//     printf("-------------------\n");
-//     ft_memmove(dst2 +2, dst2, 8);
-
-//     for (int i=0; i < 4;i++)
-//     {    
-//         printf("%d\n",dst2[i]);
-//     }
-
-// }

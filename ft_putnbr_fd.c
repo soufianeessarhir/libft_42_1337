@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 15:35:22 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/08 16:21:39 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/13 06:13:30 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(nb % 10, fd);
 	}
 }
-// int main()
-// {
-
-//     int fd = open("test",O_RDWR);
-//     ft_putnbr_fd(2147483647,fd);
-// }

@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 15:13:11 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/08 17:27:00 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/13 06:13:26 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,3 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-// int main()
-// {
-//    int fd = open("ft_strlen.c",O_RDWR);
-//     ft_putstr_fd("hello",3);
-// }
