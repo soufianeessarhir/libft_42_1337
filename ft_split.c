@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 22:38:11 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/13 06:10:31 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/14 19:39:21 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_countwords(char const *s, char c)
 	len = 0;
 	while (*s != '\0')
 	{
-		if (*s != c)
+		if (*s != c && *s)
 		{
 			len++;
 			while (*s != '\0' && *s != c)
@@ -41,42 +41,45 @@ static void	my_free(char **s)
 	free(s);
 }
 
-static int	ft_countchars(const char *s, char c, int j)
+static int	ft_countchars(char const *s, char c, int i)
 {
-	int	i;
+	int	j;
 
-	i = 0;
-	while (s[j] == c)
-		j++;
-	while (s[j] != c && s[j])
+	j = 0;
+	while (s[i] != c && s[i])
 	{
-		i++;
 		j++;
+		i++;
 	}
-	return (i);
+	return (j);
 }
 
-static void	ft_strfill(const char *s, char	**str, char c)
+static char	**ft_strfill(const char *s, char c, int size)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	char	**ptr;
 
 	i = 0;
 	j = 0;
+	ptr = malloc(sizeof(char *) * (size + 1));
+	if (!ptr)
+		return (NULL);
 	while (j < ft_countwords(s, c))
 	{
 		while (s[i] == c)
 			i++;
-		str[j] = ft_substr(s, i, ft_countchars(s, c, i));
-		if (str[j] == NULL)
+		ptr[j] = ft_substr(s, i, ft_countchars(s, c, i));
+		if (ptr[j] == NULL)
 		{
-			my_free(str);
-			return ;
+			my_free(ptr);
+			return (NULL);
 		}
 		i = i + ft_countchars(s, c, i);
 		j++;
 	}
-	str[j] = NULL;
+	ptr[j] = NULL;
+	return (ptr);
 }
 
 char	**ft_split(char const *s, char c)
@@ -85,9 +88,15 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	str = malloc(sizeof(char *) * (ft_countwords(s, c) + 1));
-	if (!str)
-		return (NULL);
-	ft_strfill(s, str, c);
+	str = ft_strfill(s, c, ft_countwords(s, c));
 	return (str);
 }
+// int main ()
+// {
+// 	char **s;
+// 	s = ft_split("hello!",' ');
+// 	while (*s)
+// 	{
+// 		printf("%s\n",*s);
+// 		s++;
+// 	}

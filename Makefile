@@ -16,7 +16,6 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM =rm -f
 AR =ar -rcs
-#HDR = libft.h
 
 all: $(NAME)
 
@@ -25,10 +24,8 @@ $(NAME): $(OBJECTS)
 
 bonus: $(B_OBJECTS)
 	$(AR) $(NAME) $(B_OBJECTS)
-
-%.o: %.c $(HDR)
-	$(CC) $(CFLAGS) -c $< -o $@
-
+%.o : %.c libft.h
+	$(CC) $(CFLAGS) -c $< 
 clean:
 	$(RM) $(OBJECTS) $(B_OBJECTS)
 
@@ -36,5 +33,3 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-.PHONY: all bonus clean fclean re
