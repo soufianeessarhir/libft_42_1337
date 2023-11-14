@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 20:12:01 by sessarhi          #+#    #+#             */
-/*   Updated: 2023/11/13 06:19:58 by sessarhi         ###   ########.fr       */
+/*   Updated: 2023/11/13 07:40:51 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-// # include <string.h>
-// # include <fcntl.h>
+# include <string.h>
+# include <fcntl.h>
 
 typedef struct s_list
 {
